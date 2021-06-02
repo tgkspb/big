@@ -37,7 +37,7 @@ app.get('/', async (req, res) => {
         num.push(Math.floor(Math.random() * max_count_db))
      }
 
-    const posts = await Post.find( { 'id' : { $in: num} }).select({id:1,title:1,descr:1}).lean()
+    const posts = await Post.find( { 'id' : { $in: num} }).select({id:1,title:1,imgurl:1}).lean()
 
     res.render('index', {
       title: 'Home page',
