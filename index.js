@@ -47,8 +47,8 @@ app.get('/', async (req, res) => {
   })
 
 app.get('/:id', async (req, res) => {
+    res.header('Content-Type', 'text/html; charset=utf-8');
     const post = await Post.findById(req.params.id).lean()
-
     const max_count_db = await Post.count()
     let num = []
     let lnk_max = (5)
